@@ -5,8 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "FiraCode Nerd Font:size=18:antialias=true:autohint=true";
-static int borderpx = 20;
+// 18pt -> 24px
+static char *font = "FiraCode Nerd Font:pixelsize=24:antialias=true:autohint=true";
+static int borderpx = 13;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -95,7 +96,8 @@ unsigned int tabspaces = 4;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	"#080808",
+    /* 8 normal colors */
+	"#151515",
 	"#cc241d",
 	"#98971a",
 	"#d79921",
@@ -104,6 +106,7 @@ static const char *colorname[] = {
 	"#689d6a",
 	"#a89984",
 
+    /* 8 bright colors */
 	"#928374",
 	"#cc241d",
 	"#98971a",
@@ -113,13 +116,11 @@ static const char *colorname[] = {
 	"#689d6a",
 	"#ebdbb2",
 
-	[255] = 0,
-
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#ebdbb2", /* 256 -> cursor */
-	"#555555", /* 257 -> rev cursor*/
-	"#080808", /* 258 -> bg */
-	"#ebdbb2", /* 259 -> fg */
+	[256] = "#ebdbb2", /* 256 -> foreground */
+	[257] = "#0f0f0f", /* 257 -> background */
+	[258] = "#ebdbb2", /* 258 -> cursor */
+	[259] = "#555555", /* 259 -> reverse cursor */
 };
 
 
@@ -127,10 +128,10 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultbg = 258;
-unsigned int defaultfg = 259;
-unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+unsigned int defaultfg = 256;
+unsigned int defaultbg = 257;
+unsigned int defaultcs = 258;
+static unsigned int defaultrcs = 259;
 
 /*
  * Default shape of cursor

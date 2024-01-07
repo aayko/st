@@ -186,14 +186,15 @@ static MouseShortcut mshortcuts[] = {
 
 static Shortcut shortcuts[] = {
 	/* mask       keysym  function      argument */
-	{ ALT,        XK_c,   clipcopy,     {.i =  0} },
-	{ ALT,        XK_v,   clippaste,    {.i =  0} },
-	{ ALT,        XK_k,   kscrollup,    {.i =  3} },
-	{ ALT,        XK_j,   kscrolldown,  {.i =  3} },
-	{ ALT,        XK_u,   kscrollup,    {.i = 16} },
-	{ ALT,        XK_d,   kscrolldown,  {.i = 16} },
-	{ ALTSHIFT,   XK_U,   zoom,         {.f = +5} },
-	{ ALTSHIFT,   XK_D,   zoom,         {.f = -5} },
+	{ ALT,        XK_c,         clipcopy,           {.i =  0} },
+	{ ALT,        XK_v,         clippaste,          {.i =  0} },
+	{ ALT,        XK_k,         kscrollup,          {.i =  3} },
+	{ ALT,        XK_j,         kscrolldown,        {.i =  3} },
+	{ ALT,        XK_u,         kscrollup,          {.i = 16} },
+	{ ALT,        XK_d,         kscrolldown,        {.i = 16} },
+	{ ALTSHIFT,   XK_U,         zoom,               {.f = +5} },
+	{ ALTSHIFT,   XK_D,         zoom,               {.f = -5} },
+	{ ALT,        XK_Escape,    keyboard_select,    { 0 } },
 };
 
 /*
